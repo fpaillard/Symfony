@@ -8,8 +8,8 @@ parameters:
     database_password: null
     mailer_transport: gmail
     mailer_host: ~
-    mailer_user: boselli.mathieu
-    mailer_password: fcbarcelone
+    mailer_user:
+    mailer_password:
     locale: fr
     secret: ThisTokenIsNotSoSecretChangeIt
     debug_toolbar: true
