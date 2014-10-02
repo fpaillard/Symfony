@@ -1,0 +1,7 @@
+parameters:
+#    site_web_client.example.class: SiteWeb\ClientBundle\Example
+
+services:
+    SiteWeb_Client.antispam:
+        class: SiteWeb\ClientBundle\Antispam\SiteWebAntispam
+        arguments: [@mailer, %locale%, 50]

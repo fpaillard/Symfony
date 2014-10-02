@@ -1,0 +1,4 @@
+site_web_client:
+    resource: "@SiteWebClientBundle/Resources/config/routing.yml"
+    prefix:   /
+

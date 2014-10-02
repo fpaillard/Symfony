@@ -1,0 +1,41 @@
+{# src/SiteWeb/ClientBundle/Resources/views/Advert/view.html.twig #}
+
+
+{% extends "SiteWebClientBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block SiteWebClientBundle_body %}
+
+  <h1>{{advert.title}}</h1>
+
+  <div class="row">
+
+    <div class="col-xs-4 col-sm-2">
+      {% if advert.image != null %} 
+        <img src="{{ asset(advert.image.getUploadDir() ~ "/" ~ advert.image.url) }}" width="100" height="100"> 
+      {% else %}
+        <img src="{{ asset("Uploads/Images" ~ "/" ~ "0.png") }}" width="100" height="100">
+      {% endif %}
+    </div>
+    <div class="col-xs-6 col-sm-6">
+      {{advert.content}}
+    </div>
+    <div class="col-xs-6 col-sm-2">
+      <a href="{{path('Siteweb_Client_delete', {'id': advert.id})}}">
+        <button type="button" class="btn btn-danger">Supprimer</button>
+      </a>
+    </div>               
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      Publiée par <strong>{{advert.author}}</strong> le {{advert.date.format('d-m-Y')}}. <br>
+      Prix: {{ advert.prix}} €<br>
+      Ville: {{advert.ville}}<br>
+      Code postal: {{advert.codepostal}}
+    </div>
+  </div>
+{% endblock %}
+

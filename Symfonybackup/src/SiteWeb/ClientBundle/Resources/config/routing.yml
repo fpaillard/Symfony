@@ -1,0 +1,25 @@
+# src/SiteWeb/ClientBundle/Resources/config/routing.yml
+Siteweb_Client_home:
+    path:     /{page}
+    defaults: { _controller: SiteWebClientBundle:Advert:index, page: 1 }
+    requirements:
+        page: \d*
+
+Siteweb_Client_view:
+    path:     /annonce/{id}
+    defaults: { _controller: SiteWebClientBundle:Advert:view }
+
+Siteweb_Client_add:
+    path:     /ajouter
+    defaults: { _controller: SiteWebClientBundle:Advert:add }
+
+
+Siteweb_Client_delete:
+    path:     /supprimer/{id}
+    defaults: { _controller: SiteWebClientBundle:Advert:delete }
+    requirements:
+        id: \d+
+
+Siteweb_Client_myAdverts:
+    path:     /mesAnnonces/
+    defaults: { _controller: SiteWebClientBundle:Advert:myAdverts }
